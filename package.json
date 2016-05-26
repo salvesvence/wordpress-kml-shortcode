@@ -1,0 +1,20 @@
+{
+  "name": "WP Kml Shortcode",
+  "version": "1.0.0",
+  "description": "Wordpress Shortcode to load kml maps into a Wordpress Theme",
+  "main": "gulp.js",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/salvesvence/wordpress-kml-shortcode.git"
+  },
+  "author": "Silvano Alves Vence",
+  "license": "ISC",
+  "homepage": "https://github.com/salvesvence/wordpress-kml-shortcode#readme",
+  "devDependencies": {
+    "gulp": "^3.9.1",
+    "gulp-clean": "^0.3.1",
+    "gulp-concat": "^2.6.0",
+    "gulp-rename": "^1.2.2",
+    "gulp-uglify": "^1.5.2"
+  }
+}
