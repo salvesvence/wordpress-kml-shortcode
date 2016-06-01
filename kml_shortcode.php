@@ -10,9 +10,12 @@ Author URI: https://github.com/salvesvence
 
 add_shortcode('kml_map', function($attrs) {
 
+    wp_enqueue_script('googleMapScript', 'https://maps.googleapis.com/maps/api/js?key=AIzaSyAb7AEhjwUmKffgccsRbxUjVWa-6KAVBK4', array('jquery'), '', true);
+    wp_enqueue_script('app', plugins_url('/wordpress-kml-shortcode/resources/js/app.min.js'), array('jquery'), '', true);
+
     $args = shortcode_atts(
         array(
-            'name' => 'via-de-la-plata-74211',
+            'name' => '74211',
             'coordinates' => '42.811609,-7.5764603',
             'zoom' => '8',
             'width' => '100%',

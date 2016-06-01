@@ -17,4 +17,4 @@ gulp.task('uglify', function() {
         .pipe(gulp.dest('resources/js'));
 });
 
-gulp.task('default', ['minify', 'uglify'], function(){});
+gulp.task('default', ['uglify'], function(){});
