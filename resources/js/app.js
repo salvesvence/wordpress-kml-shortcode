@@ -5,7 +5,11 @@ var kml         =   jQuery('.kml-map').attr('id'),
 
 function initMap() {
 
-    div.css('height', div.data('height'));
+    div.css({
+        'height': div.data('height'),
+        'margin-bottom': '30px',
+        'box-shadow': '0 2px 3px rgba(0,0,0,0.09)'
+    });
 
     var map = new google.maps.Map(document.getElementById(kml), {
         center: { lat: div.data('lat'), lng: div.data('lng') },
@@ -18,6 +22,8 @@ function initMap() {
         processStyles: true,
         zoom : false
     });
+
+    jQuery('.product-category__description > .kml-map').hide();
 
     myParser.parse(baseUrl + '/wp-content/plugins/wordpress-kml-shortcode/resources/kml/' + kml + '.kml');
 }
