@@ -260,15 +260,70 @@
             </LineString>
         </Placemark>
 
-        <Style id='icon-503-ff8277'>
+        <Style id='icon-finisterre'>
             <IconStyle>
-                <color>ff0000ff</color>
-                <scale>1.1</scale>
+                <scale>1.8</scale>
                 <Icon>
-                    <href>http://media.lavozdegalicia.es/default/2013/07/12/0012_camino/Fichero/icon-gmaps.png</href>
+                    <href>http://www.caminobytheway.com/wp-content/plugins/wordpress-kml-shortcode/resources/icons/finisterre.png</href>
                 </Icon>
             </IconStyle>
         </Style>
+        <Style id='icon-frances'>
+            <IconStyle>
+                <scale>1.8</scale>
+                <Icon>
+                    <href>http://www.caminobytheway.com/wp-content/plugins/wordpress-kml-shortcode/resources/icons/frances.png</href>
+                </Icon>
+            </IconStyle>
+        </Style>
+        <Style id='icon-portugues'>
+            <IconStyle>
+                <scale>1.8</scale>
+                <Icon>
+                    <href>http://www.caminobytheway.com/wp-content/plugins/wordpress-kml-shortcode/resources/icons/portugues.png</href>
+                </Icon>
+            </IconStyle>
+        </Style>
+        <Style id='icon-via-plata'>
+            <IconStyle>
+                <scale>1.8</scale>
+                <Icon>
+                    <href>http://www.caminobytheway.com/wp-content/plugins/wordpress-kml-shortcode/resources/icons/via-plata.png</href>
+                </Icon>
+            </IconStyle>
+        </Style>
+
+        <Placemark>
+            <styleUrl>#icon-frances</styleUrl>
+            <name>Camino Francés</name>
+            <Point>
+                <coordinates>-5.519943,42.727848,0.0</coordinates>
+            </Point>
+        </Placemark>
+
+        <Placemark>
+            <styleUrl>#icon-via-plata</styleUrl>
+            <name>Camino Vía de la Plata</name>
+            <Point>
+                <coordinates>-7.816086,42.513614,0.0</coordinates>
+            </Point>
+        </Placemark>
+
+        <Placemark>
+            <styleUrl>#icon-portugues</styleUrl>
+            <name>Camino Portugués</name>
+            <Point>
+                <coordinates>-8.64661,42.049155,0.0</coordinates>
+            </Point>
+        </Placemark>
+
+        <Placemark>
+            <styleUrl>#icon-finisterre</styleUrl>
+            <name>Camino Finisterre</name>
+            <Point>
+                <coordinates>-9.032424,43.110072,0.0</coordinates>
+            </Point>
+        </Placemark>
 
         <Style id='line-red'>
             <LineStyle>

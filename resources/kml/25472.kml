@@ -3,6 +3,38 @@
     <Document>
         <name>Camino Francés</name>
 
+        <Style id='icon-frances'>
+            <IconStyle>
+                <scale>1.8</scale>
+                <Icon>
+                    <href>http://www.caminobytheway.com/wp-content/plugins/wordpress-kml-shortcode/resources/icons/frances.png</href>
+                </Icon>
+            </IconStyle>
+        </Style>
+        <Style id='icon-portugues'>
+            <IconStyle>
+                <scale>1.8</scale>
+                <Icon>
+                    <href>http://www.caminobytheway.com/wp-content/plugins/wordpress-kml-shortcode/resources/icons/portugues.png</href>
+                </Icon>
+            </IconStyle>
+        </Style>
+        <Placemark>
+            <styleUrl>#icon-frances</styleUrl>
+            <name>Camino Francés</name>
+            <Point>
+                <coordinates>-5.519943,42.727848,0.0</coordinates>
+            </Point>
+        </Placemark>
+
+        <Placemark>
+            <styleUrl>#icon-portugues</styleUrl>
+            <name>Camino Portugués</name>
+            <Point>
+                <coordinates>-8.64661,42.049155,0.0</coordinates>
+            </Point>
+        </Placemark>
+
         <Placemark>
             <styleUrl>#line-red</styleUrl>
             <name>FR 01 Saint Jean Pied de Port - Roncesvalles</name>
