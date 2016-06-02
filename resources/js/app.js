@@ -5,10 +5,12 @@ var kml         =   jQuery('.kml-map').attr('id'),
 
 function initMap() {
 
+    var hasContainer = div.parent().attr('class') === 'tours-tabs__content padding-all';
+
     div.css({
         'height': div.data('height'),
-        'margin-bottom': '30px',
-        'box-shadow': '0 2px 3px rgba(0,0,0,0.09)'
+        'margin-bottom': hasContainer ? '0' : '30px',
+        'box-shadow': hasContainer ? 'none' : '0 2px 3px rgba(0,0,0,0.09)'
     });
 
     var map = new google.maps.Map(document.getElementById(kml), {
