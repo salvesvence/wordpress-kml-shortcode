@@ -8,6 +8,34 @@ Author: Silvano Alves Vence
 Author URI: https://github.com/salvesvence
 */
 
+class KmlOptions {
+
+    public function __construct()
+    {
+
+    }
+
+    public function add_menu_page()
+    {
+        add_options_page('Kml Options', 'Kml Options', 'manage_options', __FILE__, array('KmlOptions', 'display_options_page'));
+    }
+
+    public function display_options_page()
+    {
+        ?>
+        <div class="wrap">
+            <h1>Kml Options</h1>
+            <form method="post" action="options.php" enctype="multipart/form-data"></form>
+        </div>
+    <?php
+    }
+}
+
+add_action('admin_menu', function() {
+
+    KmlOptions::add_menu_page();
+});
+
 add_shortcode('kml_map', function($attrs) {
 
     wp_enqueue_script('googleMapScript', 'https://maps.googleapis.com/maps/api/js?key=AIzaSyAb7AEhjwUmKffgccsRbxUjVWa-6KAVBK4', array('jquery'), '', true);
