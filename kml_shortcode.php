@@ -55,7 +55,7 @@ class KmlOptions {
     public function register_settings_and_fields()
     {
         // 3rd param = optional cb
-        register_setting('kml_plugin_options', 'kml_plugin_options');
+        register_setting('kml_plugin_options', 'kml_plugin_options', array($this, 'kml_validate_settings'));
 
         // id, title of section, cb, which page?
         add_settings_section('kml_section', 'Settings', array($this, 'kml_section_cb'), __FILE__);
@@ -72,6 +72,22 @@ class KmlOptions {
         //
     }
 
+    public function kml_validate_settings($plugin_options)
+    {
+        if( !empty($_FILES['map_file']['tmp_name']) ) {
+
+            $override = array('test_form' => false);
+
+            $file = wp_handle_upload($_FILES['map_file'], $override);
+            $plugin_options['kml_map_file'] = $file['url'];
+        }
+        else {
+            $plugin_options['kml_map_file'] = $this->options['kml_map_file'];
+        }
+
+        return $plugin_options;
+    }
+
     /**
      * Display the map id setting into the Kml Options page.
      */
@@ -85,7 +101,11 @@ class KmlOptions {
      */
     public function kml_map_file_setting()
     {
-        echo '<input type="file">';
+        echo '<input name="map_file" type="file"><br><br>';
+
+        if( isset($this->options['kml_map_file']) ) {
+            echo "<img src='{$this->options['kml_map_file']}' alt=''>";
+        }
     }
 }
 
