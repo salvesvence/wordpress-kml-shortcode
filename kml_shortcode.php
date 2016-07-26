@@ -12,17 +12,26 @@ class KmlOptions {
 
     public $options;
 
+    /**
+     * Instantiate a KmlOptions class
+     */
     public function __construct()
     {
         $this->options = get_option('kml_plugin_options');
         $this->register_settings_and_fields();
     }
 
+    /**
+     * Add the Kml Options page
+     */
     public function add_menu_page()
     {
         add_options_page('Kml Options', 'Kml Options', 'administrator', __FILE__, array('KmlOptions', 'display_options_page'));
     }
 
+    /**
+     * Displays the options of the Kml Options page
+     */
     public function display_options_page()
     {
         ?>
@@ -40,6 +49,9 @@ class KmlOptions {
     <?php
     }
 
+    /**
+     * Register all Kml Options page settings and fields.
+     */
     public function register_settings_and_fields()
     {
         // 3rd param = optional cb
@@ -52,16 +64,25 @@ class KmlOptions {
         add_settings_field('kml_map_file', 'Map File: ', array($this, 'kml_map_file_setting'), __FILE__, 'kml_section');
     }
 
+    /**
+     *
+     */
     public function kml_section_cb()
     {
         //
     }
 
+    /**
+     * Display the map id setting into the Kml Options page.
+     */
     public function kml_map_id_setting()
     {
         echo "<input name='kml_plugin_options[kml_map_id]' type='text' value='{$this->options['kml_map_id']}'>";
     }
 
+    /**
+     * Display the map files setting into the Kml Options page.
+     */
     public function kml_map_file_setting()
     {
         echo '<input type="file">';
