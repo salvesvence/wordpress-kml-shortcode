@@ -8,15 +8,6 @@
             <width>5</width>
 		</LineStyle>
 	</Style>
-    <Style id='icon-503-FF7C2F'>
-		<IconStyle>
-			<color>6414B4C8</color>
-			<scale>1.1</scale>
-			<Icon>
-				<href>http://media.lavozdegalicia.es/default/2013/07/12/0012_camino/Fichero/icon-gmaps.png</href>
-			</Icon>
-		</IconStyle>
-	</Style>
 	<Placemark>
 		<name>canda_gudina</name>
 		<styleUrl>#sn_ylw-pushpin</styleUrl>
