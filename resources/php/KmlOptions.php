@@ -4,6 +4,9 @@ namespace resources\php;
 
 class KmlOptions {
 
+    /**
+     * @var
+     */
     public $options;
 
     /**
