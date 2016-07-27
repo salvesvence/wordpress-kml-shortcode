@@ -68,6 +68,12 @@ class KmlOptions {
         //
     }
 
+    /**
+     * Validate settings
+     *
+     * @param $plugin_options
+     * @return mixed
+     */
     public function kml_validate_settings($plugin_options)
     {
         $extension = 'application/octet-stream';
