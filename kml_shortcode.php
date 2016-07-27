@@ -18,6 +18,8 @@ class KmlOptions {
     public function __construct()
     {
         $this->options = get_option('kml_plugin_options');
+        $this->options['kml_map_id'] = sanitize_title($this->options['kml_map_id']);
+
         $this->register_settings_and_fields();
     }
 
@@ -74,12 +76,15 @@ class KmlOptions {
 
     public function kml_validate_settings($plugin_options)
     {
-        if( !empty($_FILES['map_file']['tmp_name']) ) {
+        $extension = 'application/octet-stream';
 
-            $override = array('test_form' => false);
+        if( !empty($_FILES['map_file']['tmp_name']) && $_FILES['map_file']['type'] === $extension) {
 
-            $file = wp_handle_upload($_FILES['map_file'], $override);
-            $plugin_options['kml_map_file'] = $file['url'];
+            $filename = $this->options['kml_map_id'];
+            $plugin_options['kml_map_file'] = $filename;
+
+            $path = __DIR__ . '/resources/kml/' . $filename . '.kml';
+            copy($plugin_options['kml_map_file'], $path);
         }
         else {
             $plugin_options['kml_map_file'] = $this->options['kml_map_file'];
@@ -102,10 +107,6 @@ class KmlOptions {
     public function kml_map_file_setting()
     {
         echo '<input name="map_file" type="file"><br><br>';
-
-        if( isset($this->options['kml_map_file']) ) {
-            echo "<img src='{$this->options['kml_map_file']}' alt=''>";
-        }
     }
 }
 
