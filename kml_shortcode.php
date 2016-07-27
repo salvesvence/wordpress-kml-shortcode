@@ -12,12 +12,10 @@ Author URI: https://github.com/salvesvence
 require_once plugin_dir_path( __FILE__ ) . 'resources/php/KmlOptions.php';
 
 add_action('admin_menu', function() {
-
     resources\php\KmlOptions::add_menu_page();
 });
 
 add_action('admin_init', function() {
-
     new resources\php\KmlOptions();
 });
 
